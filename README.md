@@ -3,631 +3,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Copa do Mundo 2026 - Ultimate Fan Experience</title>
+    <title>Cyber Stadium - Arcade Soccer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Plus+Jakarta+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-dark: #060913;
-            --bg-card: #0e1424;
-            --neon-cyan: #00f0ff;
+            --bg-color: #050811;
             --neon-green: #39ff14;
-            --neon-gold: #ffbd59;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
+            --neon-blue: #00f0ff;
+            --neon-yellow: #fffb00;
+            --panel-bg: rgba(14, 23, 41, 0.75);
             --font-display: 'Orbitron', sans-serif;
-            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --font-ui: 'Rajdhani', sans-serif;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: var(--font-body);
-            overflow-x: hidden;
-        }
-
-        /* --- HEADER & NAV --- */
-        header {
-            position: fixed;
-            top: 0; width: 100%;
-            background: rgba(6, 9, 19, 0.85);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 20px;
+            background-color: var(--bg-color);
+            color: #fff;
+            font-family: var(--font-ui);
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-display);
-            font-weight: 900;
-            font-size: 1.6rem;
-            letter-spacing: 2px;
-            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--neon-cyan);
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            min-height: 90vh;
-            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 120px 20px 60px 20px;
-            background: radial-gradient(circle at 50% 40%, rgba(0, 240, 255, 0.1), transparent 50%);
-        }
-
-        .hero-content h1 {
-            font-family: var(--font-display);
-            font-size: 4rem;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-        }
-
-        .hero-content h1 span {
-            background: linear-gradient(135deg, var(--neon-gold), #ff4b4b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto 40px auto;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 15px 35px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            font-family: var(--font-display);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary {
-            background: var(--neon-cyan);
-            color: #000;
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 25px rgba(0, 240, 255, 0.7);
-        }
-
-        .btn-secondary {
-            border: 2px solid var(--neon-green);
-            color: var(--neon-green);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(57, 255, 20, 0.1);
-            transform: translateY(-2px);
-        }
-
-        /* --- SEÇÃO JOGADORES --- */
-        .section-padding {
-            padding: 100px 20px;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-        }
-
-        .players-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .player-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
+            min-height: 100vh;
             overflow: hidden;
-            transition: all 0.4s ease;
-            position: relative;
+            background: radial-gradient(circle at center, #0f1932 0%, #050811 100%);
         }
 
-        .player-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--neon-cyan);
-            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.1);
-        }
-
-        .player-visual {
-            height: 240px;
-            background: linear-gradient(180deg, rgba(14, 20, 36, 0.5) 0%, var(--bg-card) 100%), #151d33;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .player-number {
-            position: absolute;
-            top: 15px; right: 20px;
-            font-family: var(--font-display);
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: rgba(255, 255, 255, 0.03);
-        }
-
-        .player-icon {
-            font-size: 5rem;
-            filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));
-        }
-
-        .player-info {
-            padding: 25px;
-        }
-
-        .player-tag {
-            font-size: 0.75rem;
-            font-family: var(--font-display);
-            color: var(--neon-cyan);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            display: inline-block;
-        }
-
-        .player-name {
-            font-family: var(--font-display);
-            font-size: 1.4rem;
-            margin-bottom: 5px;
-        }
-
-        .player-country {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
-        /* Status Bars */
-        .stat-row {
-            margin-bottom: 10px;
-        }
-        .stat-labels {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.8rem;
-            margin-bottom: 4px;
-            color: var(--text-muted);
-        }
-        .stat-bar-bg {
-            width: 100%; height: 6px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 3px; overflow: hidden;
-        }
-        .stat-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green));
-            border-radius: 3px;
-        }
-
-        /* --- SEÇÃO GAME --- */
-        .game-section {
-            background: radial-gradient(circle at 50% 50%, #0d1b2e 0%, var(--bg-dark) 70%);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .game-container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: #090f1d;
-            border: 2px solid var(--neon-green);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 0 30px rgba(57, 255, 20, 0.15);
+        /* BARRA SUPERIOR / PLACAR */
+        .game-header {
             text-align: center;
+            margin-bottom: 15px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, var(--neon-yellow), var(--neon-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
         }
 
         .scoreboard {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            background: var(--panel-bg);
+            padding: 10px 40px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .team-score {
             font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 900;
+        }
+
+        #score-player { color: var(--neon-yellow); text-shadow: 0 0 10px rgba(255, 251, 0, 0.5); }
+        #score-cpu { color: var(--neon-blue); text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); }
+
+        .vs {
             font-size: 1.2rem;
-            margin-bottom: 30px;
-            background: rgba(255,255,255,0.02);
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .scoreboard span {
-            color: var(--neon-gold);
+            color: #556789;
             font-weight: bold;
+            text-transform: uppercase;
         }
 
-        /* A Trave do Jogo */
-        .stadium-wrapper {
+        /* ÁREA DO JOGO (CANVAS) */
+        .canvas-container {
             position: relative;
-            width: 100%;
-            height: 250px;
-            background: #0d2417; /* Gramado escuro */
+            border: 4px solid #1e293b;
             border-radius: 12px;
-            border-bottom: 8px solid #1b4d31;
-            margin-bottom: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            overflow: hidden;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.15);
+            background-color: #0a140d;
         }
 
-        .goalpost {
-            position: absolute;
-            top: 40px;
-            width: 70%;
-            height: 160px;
-            border: 5px solid #ffffff;
-            border-bottom: none;
-            background: repeating-linear-gradient(45deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05) 10px, transparent 10px, transparent 20px);
+        canvas {
+            display: block;
+            cursor: none;
         }
 
-        .goalkeeper {
-            position: absolute;
-            bottom: 0;
-            left: calc(50% - 25px);
-            width: 50px;
-            height: 65px;
-            font-size: 3rem;
+        /* PAINEL DE INSTRUÇÕES */
+        .controls-panel {
+            margin-top: 15px;
+            background: var(--panel-bg);
+            padding: 12px 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 1.1rem;
+            color: #94a3b8;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease-out;
-            z-index: 5;
+            gap: 30px;
         }
 
-        .ball {
+        .controls-panel strong {
+            color: #fff;
+        }
+
+        /* MENSAGEM DE GOL OVERLAY */
+        .goal-overlay {
             position: absolute;
-            bottom: 20px;
-            left: calc(50% - 18px);
-            width: 36px;
-            height: 36px;
-            font-size: 2.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-family: var(--font-display);
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--neon-green);
+            text-shadow: 0 0 30px var(--neon-green);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
             z-index: 10;
         }
 
-        /* Controles do Chute */
-        .target-controls {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-
-        .btn-shoot {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: white;
-            padding: 15px;
-            border-radius: 10px;
-            font-family: var(--font-display);
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .btn-shoot:hover {
-            background: var(--neon-green);
-            color: black;
-            box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
-        }
-
-        .game-feedback {
-            margin-top: 20px;
-            font-family: var(--font-display);
-            font-size: 1.3rem;
-            height: 30px;
-            font-weight: 700;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 40px 20px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* --- RESPONSIVIDADE --- */
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.6rem; }
-            .nav-links { display: none; }
-            .cta-buttons { flex-direction: column; }
+        .goal-overlay.active {
+            transform: translate(-50%, -50%) scale(1);
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="nav-container">
-            <div class="logo">WORLD CUP 2026</div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#craques">Os Astros</a></li>
-                <li><a href="#arena">Mini-Game</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h1>A Maior de Todas <br>As <span>Copas do Mundo</span></h1>
-            <p>Acompanhe a evolução do futebol na América do Norte. Estrelas consolidadas e promessas meteóricas prontas para reescrever a história.</p>
-            <div class="cta-buttons">
-                <a href="#craques" class="btn btn-primary">Ver Jogadores</a>
-                <a href="#arena" class="btn btn-secondary">Jogar Agora</a>
+    <div class="game-header">
+        <h1 class="title">Cyber Stadium Soccer</h1>
+        <div class="scoreboard">
+            <div>
+                <span style="font-size: 0.9rem; color: #aaa; display:block;">BRASIL</span>
+                <span id="score-player" class="team-score">0</span>
+            </div>
+            <div class="vs">VS</div>
+            <div>
+                <span style="font-size: 0.9rem; color: #aaa; display:block;">CPU</span>
+                <span id="score-cpu" class="team-score">0</span>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="craques" class="section-padding">
-        <div class="section-header">
-            <h2>Os Convocados do Destino</h2>
-            <p>Os principais protagonistas que disputam o trono mais cobiçado do esporte global.</p>
-        </div>
+    <div class="canvas-container">
+        <div id="goal-text" class="goal-overlay">GOOOOOL!</div>
+        <canvas id="gameCanvas" width="800" height="450"></canvas>
+    </div>
 
-        <div class="players-grid">
-            
-            <div class="player-card">
-                <div class="player-visual">
-                    <div class="player-number">07</div>
-                    <div class="player-icon">⚡</div>
-                </div>
-                <div class="player-info">
-                    <span class="player-tag">Atacante</span>
-                    <h3 class="player-name">Vinícius Jr.</h3>
-                    <p class="player-country">Brasil</p>
-                    
-                    <div class="stat-row">
-                        <div class="stat-labels"><span>Velocidade</span><span>97</span></div>
-                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 97%;"></div></div>
-                    </div>
-                    <div class="stat-row">
-                        <div class="stat-labels"><span>Drible</span><span>95</span></div>
-                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 95%;"></div></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="player-card">
-                <div class="player-visual">
-                    <div class="player-number">10</div>
-                    <div class="player-icon">👑</div>
-                </div>
-                <div class="player-info">
-                    <span class="player-tag">Meio-Campo</span>
-                    <h3 class="player-name">Neymar Jr.</h3>
-                    <p class="player-country">Brasil</p>
-                    
-                    <div class="stat-row">
-                        <div class="stat-labels"><span>Visão de Jogo</span><span>94</span></div>
-                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 94%;"></div></div>
-                    </div>
-                    <div class="stat-row">
-                        <div class="stat-labels"><span>Técnica</span><span>96</span></div>
-                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 96%;"></div></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="player-card">
-                <div class="player-visual">
-                    <div class="player-number">09</div>
-                    <div class="player-icon">💎</div>
-                </div>
-                <div class="player-info">
-                    <span class="player-tag">Centroavante</span>
-                    <h3 class="player-name">Endrick</h3>
-                    <p class="player-country">Brasil</p>
-                    
-                    <div class="stat-row">
-                        <div class="stat-labels"><span>Força</span><span>91</span></div>
-                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 91%;"></div></div>
-                    </div>
-                    <div class="stat-row">
-                        <div class="stat-labels"><span>Finalização</span><span>93</span></div>
-                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 93%;"></div></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="player-card">
-                <div class="player-visual">
-                    <div class="player-number">10</div>
-                    <div class="player-icon">🥷</div>
-                </div>
-                <div class="player-info">
-                    <span class="player-tag">Atacante</span>
-                    <h3 class="player-name">Kylian Mbappé</h3>
-                    <p class="player-country">França</p>
-                    
-                    <div class="stat-row">
-                        <div class="stat-labels"><span>Explosão</span><span>98</span></div>
-                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 98%;"></div></div>
-                    </div>
-                    <div class="stat-row">
-                        <div class="stat-labels"><span>Chute</span><span>92</span></div>
-                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 92%;"></div></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="arena" class="section-padding game-section">
-        <div class="section-header">
-            <h2>Arena Penalty Shootout</h2>
-            <p>Mostre suas habilidades de craque. Escolha o canto e vença o goleiro eletrônico!</p>
-        </div>
-
-        <div class="game-container">
-            <div class="scoreboard">
-                <div>GOLS: <span id="score-gols">0</span></div>
-                <div>DEFESAS: <span id="score-defesas">0</span></div>
-            </div>
-
-            <div class="stadium-wrapper">
-                <div class="goalpost"></div>
-                <div id="goalkeeper" class="goalkeeper">🧤</div>
-                <div id="ball" class="ball">⚽</div>
-            </div>
-
-            <div class="target-controls">
-                <button class="btn-shoot" onclick="chutar('esquerda')">Canto Esquerdo</button>
-                <button class="btn-shoot" onclick="chutar('centro')">Centro do Gol</button>
-                <button class="btn-shoot" onclick="chutar('direita')">Canto Direito</button>
-            </div>
-
-            <div id="feedback" class="game-feedback"></div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Ultimate Copa Site. Desenvolvido no ritmo da maior competição da história.</p>
-    </footer>
+    <div class="controls-panel">
+        <div>Mover: <strong>W, A, S, D</strong> ou <strong>Setas</strong></div>
+        <div>Objetivo: <strong>Empurre a bola no gol direito!</strong></div>
+    </div>
 
     <script>
-        let gols = 0;
-        let defesas = 0;
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const goalText = document.getElementById('goal-text');
 
-        const goleiro = document.getElementById('goalkeeper');
-        const bola = document.getElementById('ball');
-        const feedback = document.getElementById('feedback');
-        const txtGols = document.getElementById('score-gols');
-        const txtDefesas = document.getElementById('score-defesas');
+        // VARIÁVEIS DO PLACAR
+        let playerPoints = 0;
+        let cpuPoints = 0;
 
-        // Mapeia posições visuais do CSS dentro da trave
-        const posicoesGoleiro = {
-            'esquerda': 'calc(50% - 100px)',
-            'centro': 'calc(50% - 25px)',
-            'direita': 'calc(50% + 50px)'
-        };
+        // TECLAS PRESSIONADAS
+        const keys = {};
+        window.addEventListener('keydown', e => keys[e.key.toLowerCase()] = true);
+        window.addEventListener('keyup', e => keys[e.key.toLowerCase()] = false);
 
-        const posicoesBola = {
-            'esquerda': { left: 'calc(50% - 90px)', top: '60px' },
-            'centro': { left: 'calc(50% - 18px)', top: '75px' },
-            'direita': { left: 'calc(50% + 60px)', top: '60px' }
-        };
+        // CONFIGURAÇÕES DO CAMPO E ENTIEDADES
+        const goalHeight = 120;
+        const goalTop = (canvas.height - goalHeight) / 2;
 
-        function chutar(cantoEscolhido) {
-            // Desabilita botões temporariamente durante a animação
-            document.querySelectorAll('.btn-shoot').forEach(b => b.disabled = true);
-            feedback.innerText = "Chutou...";
+        class Entity {
+            constructor(x, y, radius, color, speed) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.color = color;
+                this.speed = speed;
+                this.vx = 0;
+                this.vy = 0;
+            }
 
-            // Goleiro escolhe um canto aleatório para pular
-            const opcoes = ['esquerda', 'centro', 'direita'];
-            const cantoGoleiro = opcoes[Math.floor(Math.random() * opcoes.length)];
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.closePath();
+            }
+        }
 
-            // Move o goleiro e a bola nas coordenadas corretas
-            goleiro.style.left = posicoesGoleiro[cantoGoleiro];
-            if(cantoGoleiro !== 'centro') goleiro.style.bottom = '20px'; // Efeito pulo
+        const player = new Entity(150, canvas.height / 2, 22, '#fffb00', 4.5);
+        const cpu = new Entity(650, canvas.height / 2, 22, '#00f0ff', 3.8);
+        const ball = new Entity(canvas.width / 2, canvas.height / 2, 12, '#ffffff', 0);
+        ball.friction = 0.98; // Atrito da bola com o gramado
 
-            bola.style.left = posicoesBola[cantoEscolhido].left;
-            bola.style.top = posicoesBola[cantoEscolhido].top;
+        function initPositions() {
+            player.x = 150; player.y = canvas.height / 2; player.vx = 0; player.vy = 0;
+            cpu.x = 650; cpu.y = canvas.height / 2; cpu.vx = 0; cpu.vy = 0;
+            ball.x = canvas.width / 2; ball.y = canvas.height / 2; ball.vx = 0; ball.vy = 0;
+        }
 
+        // CONTROLAR COLISÃO FÍSICA ENTRE CÍRCULOS (Jogador/Bola)
+        function handleCollision(ent, ballObj) {
+            let dx = ballObj.x - ent.x;
+            let dy = ballObj.y - ent.y;
+            let dist = Math.sqrt(dx * dx + dy * dy);
+            let minDist = ent.radius + ballObj.radius;
+
+            if (dist < minDist) {
+                // Afasta a bola imediatamente para não grudar
+                let angle = Math.atan2(dy, dx);
+                let overlap = minDist - dist;
+                ballObj.x += Math.cos(angle) * overlap;
+                ballObj.y += Math.sin(angle) * overlap;
+
+                // Transfere velocidade do impacto e adiciona força extra de chute
+                ballObj.vx = Math.cos(angle) * (Math.abs(ent.vx) + 5);
+                ballObj.vy = Math.sin(angle) * (Math.abs(ent.vy) + 5);
+            }
+        }
+
+        // DESENHAR LINHAS DO CAMPO ESTILO VAPORWAVE/NEON
+        function drawPitch() {
+            // Gramado de fundo
+            ctx.fillStyle = '#06130b';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Linhas brancas neon do campo
+            ctx.strokeStyle = 'rgba(57, 255, 20, 0.3)';
+            ctx.lineWidth = 3;
+
+            // Linha do meio campo
+            ctx.beginPath();
+            ctx.moveTo(canvas.width / 2, 0);
+            ctx.lineTo(canvas.width / 2, canvas.height);
+            ctx.stroke();
+
+            // Círculo central
+            ctx.beginPath();
+            ctx.arc(canvas.width / 2, canvas.height / 2, 70, 0, Math.PI * 2);
+            ctx.stroke();
+
+            // Áreas do Gol (Esquerda e Direita)
+            ctx.strokeRect(0, goalTop - 40, 80, goalHeight + 80);
+            ctx.strokeRect(canvas.width - 80, goalTop - 40, 80, goalHeight + 80);
+
+            // Traves Físicas (Desenho Visual)
+            ctx.fillStyle = '#334155';
+            ctx.fillRect(0, goalTop, 8, goalHeight);
+            ctx.fillRect(canvas.width - 8, goalTop, 8, goalHeight);
+        }
+
+        function triggerGoal(team) {
+            if(team === 'player') { playerPoints++; document.getElementById('score-player').innerText = playerPoints; }
+            if(team === 'cpu') { cpuPoints++; document.getElementById('score-cpu').innerText = cpuPoints; }
+            
+            goalText.classList.add('active');
             setTimeout(() => {
-                // Checa resultado após a animação terminar
-                if (cantoEscolhido === cantoGoleiro) {
-                    feedback.style.color = '#ff4b4b';
-                    feedback.innerText = "DEFENDEU! 🧤❌";
-                    defesas++;
-                    txtDefesas.innerText = defesas;
+                goalText.classList.remove('active');
+                initPositions();
+            }, 1500);
+        }
+
+        // LOOP PRINCIPAL DO JOGO
+        function update() {
+            // 1. MOVIMENTAÇÃO JOGADOR (WASD / Setas)
+            player.vx = 0; player.vy = 0;
+            if (keys['w'] || keys['arrowup']) { player.vy = -player.speed; }
+            if (keys['s'] || keys['arrowdown']) { player.vy = player.speed; }
+            if (keys['a'] || keys['arrowleft']) { player.vx = -player.speed; }
+            if (keys['d'] || keys['arrowright']) { player.vx = player.speed; }
+            
+            player.x += player.vx;
+            player.y += player.vy;
+
+            // 2. INTELIGÊNCIA ARTIFICIAL SIMPLES DO BOT (CPU)
+            // O bot segue a bola se ela estiver do lado dele do campo
+            let targetY = ball.y;
+            let targetX = ball.x;
+
+            cpu.vx = 0; cpu.vy = 0;
+            if (cpu.x < targetX) { cpu.vx = cpu.speed * 0.7; }
+            if (cpu.x > targetX) { cpu.vx = -cpu.speed; }
+            if (cpu.y < targetY - 5) { cpu.vy = cpu.speed; }
+            if (cpu.y > targetY + 5) { cpu.vy = -cpu.speed; }
+
+            cpu.x += cpu.vx;
+            cpu.y += cpu.vy;
+
+            // 3. FÍSICA E MOVIMENTO DA BOLA
+            ball.vx *= ball.friction;
+            ball.vy *= ball.friction;
+            ball.x += ball.vx;
+            ball.y += ball.vy;
+
+            // Limitar jogadores dentro das bordas do campo
+            [player, cpu].forEach(ent => {
+                if (ent.x - ent.radius < 0) ent.x = ent.radius;
+                if (ent.x + ent.radius > canvas.width) ent.x = canvas.width - ent.radius;
+                if (ent.y - ent.radius < 0) ent.y = ent.radius;
+                if (ent.y + ent.radius > canvas.height) ent.y = canvas.height - ent.radius;
+            });
+
+            // 4. COLISÕES COM AS BORDAS / DETECÇÃO DE GOL
+            // Paredes Topo e Fundo da Bola
+            if (ball.y - ball.radius < 0 || ball.y + ball.radius > canvas.height) {
+                ball.vy = -ball.vy;
+            }
+
+            // Paredes Laterais da Bola (Checa se entrou no gol ou bateu na linha de fundo)
+            if (ball.x - ball.radius < 0) {
+                if (ball.y > goalTop && ball.y < goalTop + goalHeight) {
+                    triggerGoal('cpu'); // Gol da CPU
                 } else {
-                    feedback.style.color = 'var(--neon-green)';
-                    feedback.innerText = "GOOOOOL! ⚽🔥";
-                    gols++;
-                    txtGols.innerText = gols;
+                    ball.vx = -ball.vx; // Bateu na parede de fundo
+                    ball.x = ball.radius;
                 }
+            }
+            if (ball.x + ball.radius > canvas.width) {
+                if (ball.y > goalTop && ball.y < goalTop + goalHeight) {
+                    triggerGoal('player'); // Gol do Jogador
+                } else {
+                    ball.vx = -ball.vx; // Bateu na parede de fundo
+                    ball.x = canvas.width - ball.radius;
+                }
+            }
 
-                // Reseta a jogada após 2 segundos
-                setTimeout(resetarCampo, 1800);
-            }, 500);
+            // 5. PROCESSAR COLISÕES ENTRE CORPOS
+            handleCollision(player, ball);
+            handleCollision(cpu, ball);
+
+            // 6. RENDERIZAÇÃO GRÁFICA
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawPitch();
+            
+            // Detalhes estéticos (Sombras brilhantes)
+            ctx.shadowBlur = 15;
+            ctx.shadowColor = player.color;
+            player.draw();
+            
+            ctx.shadowColor = cpu.color;
+            cpu.draw();
+            
+            ctx.shadowColor = '#ffffff';
+            ball.draw();
+            ctx.shadowBlur = 0; // Desativa sombra para otimizar frames
+
+            requestAnimationFrame(update);
         }
 
-        function resetarCampo() {
-            // Reseta posições visuais dos elementos
-            bola.style.left = 'calc(50% - 18px)';
-            bola.style.top = 'auto';
-            bola.style.bottom = '20px';
-
-            goleiro.style.left = 'calc(50% - 25px)';
-            goleiro.style.bottom = '0';
-
-            feedback.innerText = "";
-            document.querySelectorAll('.btn-shoot').forEach(b => b.disabled = false);
-        }
+        // Inicia o jogo
+        initPositions();
+        update();
     </script>
 </body>
 </html>
