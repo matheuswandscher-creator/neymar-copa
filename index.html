@@ -3,27 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brasil na Copa | Os Protagonistas do Hexa</title>
+    <title>Copa do Mundo 2026 - Ultimate Fan Experience</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Plus+Jakarta+Sans:wght@300;500;700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- VARIÁVEIS DE CORES E CONFIGURAÇÕES --- */
         :root {
-            --bg-principal: #0a0f18;
-            --bg-card: rgba(255, 255, 255, 0.03);
-            --borda-card: rgba(255, 255, 255, 0.08);
-            --verde-neon: #00ff66;
-            --amarelo-ouro: #ffd700;
-            --azul-selecao: #0052cc;
-            --texto-branco: #ffffff;
-            --texto-cinza: #a0aec0;
-            --font-titulo: 'Montserrat', sans-serif;
-            --font-corpo: 'Poppins', sans-serif;
+            --bg-dark: #060913;
+            --bg-card: #0e1424;
+            --neon-cyan: #00f0ff;
+            --neon-green: #39ff14;
+            --neon-gold: #ffbd59;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --font-display: 'Orbitron', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
         }
 
-        /* --- RESET GERAL --- */
         * {
             margin: 0;
             padding: 0;
@@ -32,25 +29,24 @@
         }
 
         body {
-            background-color: var(--bg-principal);
-            color: var(--texto-branco);
-            font-family: var(--font-corpo);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
             overflow-x: hidden;
         }
 
-        /* --- HEADER & NAVEGAÇÃO --- */
+        /* --- HEADER & NAV --- */
         header {
             position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 15, 24, 0.8);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--borda-card);
+            top: 0; width: 100%;
+            background: rgba(6, 9, 19, 0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             z-index: 1000;
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
             padding: 20px;
             display: flex;
@@ -59,56 +55,47 @@
         }
 
         .logo {
-            font-family: var(--font-titulo);
+            font-family: var(--font-display);
             font-weight: 900;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             letter-spacing: 2px;
-            background: linear-gradient(45deg, var(--verde-neon), var(--amarelo-ouro));
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .nav-menu {
+        .nav-links {
             display: flex;
-            list-style: none;
             gap: 30px;
+            list-style: none;
         }
 
-        .nav-menu a {
-            color: var(--texto-branco);
+        .nav-links a {
+            color: var(--text-main);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            transition: color 0.3s;
         }
 
-        .nav-menu a:hover {
-            color: var(--verde-neon);
+        .nav-links a:hover {
+            color: var(--neon-cyan);
         }
 
         /* --- HERO SECTION --- */
         .hero {
-            height: 100vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            position: relative;
-            background: radial-gradient(circle at 50% 50%, rgba(0, 82, 204, 0.15) 0%, transparent 60%);
-            padding: 20px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1920') center/cover no-repeat;
-            opacity: 0.15;
-            z-index: -1;
+            padding: 120px 20px 60px 20px;
+            background: radial-gradient(circle at 50% 40%, rgba(0, 240, 255, 0.1), transparent 50%);
         }
 
         .hero-content h1 {
-            font-family: var(--font-titulo);
-            font-size: 4.5rem;
+            font-family: var(--font-display);
+            font-size: 4rem;
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 20px;
@@ -116,228 +103,307 @@
             letter-spacing: -1px;
         }
 
-        .hero-content h1 span.verde { color: var(--verde-neon); }
-        .hero-content h1 span.amarelo { color: var(--amarelo-ouro); }
+        .hero-content h1 span {
+            background: linear-gradient(135deg, var(--neon-gold), #ff4b4b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
         .hero-content p {
             font-size: 1.2rem;
-            color: var(--texto-cinza);
-            max-width: 600px;
+            color: var(--text-muted);
+            max-width: 700px;
             margin: 0 auto 40px auto;
         }
 
-        .btn-cta {
-            background: linear-gradient(90deg, var(--verde-neon), var(--amarelo-ouro));
-            color: #000;
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: inline-block;
-        }
-
-        .btn-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 255, 102, 0.3);
-        }
-
-        /* --- SEÇÃO JOGADORES --- */
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 100px 20px;
-        }
-
-        .section-title {
-            font-family: var(--font-titulo);
-            font-size: 2.5rem;
-            font-weight: 900;
-            text-align: center;
-            margin-bottom: 60px;
-            text-transform: uppercase;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--verde-neon);
-            margin: 15px auto 0 auto;
-            border-radius: 2px;
-        }
-
-        .grid-jogadores {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        /* CARD DO JOGADOR */
-        .card-jogador {
-            background: var(--bg-card);
-            border: 1px solid var(--borda-card);
-            border-radius: 20px;
-            overflow: hidden;
-            backdrop-filter: blur(5px);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s ease;
-            position: relative;
-        }
-
-        .card-jogador:hover {
-            transform: translateY(-10px);
-            border-color: var(--amarelo-ouro);
-        }
-
-        .img-container {
-            width: 100%;
-            height: 350px;
-            background: linear-gradient(180deg, transparent 60%, var(--bg-principal)), #1a2333;
-            position: relative;
+        .cta-buttons {
             display: flex;
-            align-items: flex-end;
+            gap: 20px;
             justify-content: center;
         }
 
-        /* Silhuetas/Placeholders Estilizados (Substitua as URLs pelas fotos reais se desejar) */
-        .avatar-placeholder {
-            font-size: 8rem;
-            margin-bottom: 20px;
-            opacity: 0.7;
-            filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
-        }
-
-        .numero-camisa {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-family: var(--font-titulo);
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: rgba(255, 255, 255, 0.08);
-            line-height: 1;
-        }
-
-        .info-jogador {
-            padding: 30px;
-            position: relative;
-        }
-
-        .tag-posicao {
-            display: inline-block;
-            padding: 4px 12px;
-            background: rgba(0, 82, 204, 0.2);
-            border: 1px solid var(--azul-selecao);
-            color: #66a3ff;
-            border-radius: 50px;
-            font-size: 0.8rem;
+        .btn {
+            padding: 15px 35px;
+            border-radius: 8px;
+            text-decoration: none;
             font-weight: 700;
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--neon-cyan);
+            color: #000;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.7);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--neon-green);
+            color: var(--neon-green);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(57, 255, 20, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* --- SEÇÃO JOGADORES --- */
+        .section-padding {
+            padding: 100px 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
             text-transform: uppercase;
             margin-bottom: 15px;
         }
 
-        .nome-jogador {
-            font-family: var(--font-titulo);
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 10px;
+        .section-header p {
+            color: var(--text-muted);
         }
 
-        .detalhes-clube {
-            color: var(--texto-cinza);
-            font-size: 0.95rem;
+        .players-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .player-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .player-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.1);
+        }
+
+        .player-visual {
+            height: 240px;
+            background: linear-gradient(180deg, rgba(14, 20, 36, 0.5) 0%, var(--bg-card) 100%), #151d33;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .player-number {
+            position: absolute;
+            top: 15px; right: 20px;
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-icon {
+            font-size: 5rem;
+            filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));
+        }
+
+        .player-info {
+            padding: 25px;
+        }
+
+        .player-tag {
+            font-size: 0.75rem;
+            font-family: var(--font-display);
+            color: var(--neon-cyan);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        .player-name {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .player-country {
+            color: var(--text-muted);
+            font-size: 0.9rem;
             margin-bottom: 20px;
         }
 
-        /* Atributos de Status */
-        .status-bar-container {
-            margin-top: 15px;
+        /* Status Bars */
+        .stat-row {
+            margin-bottom: 10px;
         }
-
-        .status-label {
+        .stat-labels {
             display: flex;
             justify-content: space-between;
-            font-size: 0.85rem;
-            margin-bottom: 5px;
-            color: var(--texto-cinza);
+            font-size: 0.8rem;
+            margin-bottom: 4px;
+            color: var(--text-muted);
         }
-
-        .bar-bg {
-            width: 100%;
-            height: 6px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 3px;
-            overflow: hidden;
-            margin-bottom: 12px;
+        .stat-bar-bg {
+            width: 100%; height: 6px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 3px; overflow: hidden;
         }
-
-        .bar-fill {
+        .stat-bar-fill {
             height: 100%;
-            background: linear-gradient(90deg, var(--verde-neon), var(--amarelo-ouro));
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green));
             border-radius: 3px;
         }
 
-        /* --- SEÇÃO HISTÓRIA / TÍTULOS --- */
-        .historico {
-            background: linear-gradient(180deg, transparent, rgba(0, 39, 118, 0.1), transparent);
+        /* --- SEÇÃO GAME --- */
+        .game-section {
+            background: radial-gradient(circle at 50% 50%, #0d1b2e 0%, var(--bg-dark) 70%);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .tabela-titulos {
+        .game-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #090f1d;
+            border: 2px solid var(--neon-green);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.15);
+            text-align: center;
+        }
+
+        .scoreboard {
+            display: flex;
+            justify-content: space-around;
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            background: rgba(255,255,255,0.02);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .scoreboard span {
+            color: var(--neon-gold);
+            font-weight: bold;
+        }
+
+        /* A Trave do Jogo */
+        .stadium-wrapper {
+            position: relative;
             width: 100%;
-            border-collapse: collapse;
-            margin-top: 30px;
-            background: var(--bg-card);
-            border-radius: 15px;
+            height: 250px;
+            background: #0d2417; /* Gramado escuro */
+            border-radius: 12px;
+            border-bottom: 8px solid #1b4d31;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
             overflow: hidden;
-            border: 1px solid var(--borda-card);
         }
 
-        .tabela-titulos th, .tabela-titulos td {
-            padding: 20px;
-            text-align: left;
+        .goalpost {
+            position: absolute;
+            top: 40px;
+            width: 70%;
+            height: 160px;
+            border: 5px solid #ffffff;
+            border-bottom: none;
+            background: repeating-linear-gradient(45deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05) 10px, transparent 10px, transparent 20px);
         }
 
-        .tabela-titulos th {
-            background: rgba(255, 255, 255, 0.05);
-            font-family: var(--font-titulo);
-            color: var(--amarelo-ouro);
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+        .goalkeeper {
+            position: absolute;
+            bottom: 0;
+            left: calc(50% - 25px);
+            width: 50px;
+            height: 65px;
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease-out;
+            z-index: 5;
         }
 
-        .tabela-titulos tr:not(:last-child) {
-            border-bottom: 1px solid var(--borda-card);
+        .ball {
+            position: absolute;
+            bottom: 20px;
+            left: calc(50% - 18px);
+            width: 36px;
+            height: 36px;
+            font-size: 2.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 10;
+        }
+
+        /* Controles do Chute */
+        .target-controls {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .btn-shoot {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-shoot:hover {
+            background: var(--neon-green);
+            color: black;
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+        }
+
+        .game-feedback {
+            margin-top: 20px;
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            height: 30px;
+            font-weight: 700;
         }
 
         /* --- FOOTER --- */
         footer {
-            border-top: 1px solid var(--borda-card);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding: 40px 20px;
             text-align: center;
-            color: var(--texto-cinza);
+            color: var(--text-muted);
             font-size: 0.9rem;
-        }
-
-        footer span {
-            color: var(--verde-neon);
         }
 
         /* --- RESPONSIVIDADE --- */
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.8rem;
-            }
-            .nav-menu {
-                display: none; /* Em um cenário real, adicionaria um menu hambúrguer */
-            }
-            .grid-jogadores {
-                grid-template-columns: 1fr;
-            }
+            .hero-content h1 { font-size: 2.6rem; }
+            .nav-links { display: none; }
+            .cta-buttons { flex-direction: column; }
         }
     </style>
 </head>
@@ -345,104 +411,114 @@
 
     <header>
         <div class="nav-container">
-            <div class="logo">BRASIL.FC</div>
-            <ul class="nav-menu">
+            <div class="logo">WORLD CUP 2026</div>
+            <ul class="nav-links">
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#elenco">Os Craques</a></li>
-                <li><a href="#historia">Nossa História</a></li>
+                <li><a href="#craques">Os Astros</a></li>
+                <li><a href="#arena">Mini-Game</a></li>
             </ul>
         </div>
     </header>
 
     <section id="inicio" class="hero">
         <div class="hero-content">
-            <h1>A Busca Pelo <br><span class="verde">Próximo</span> <span class="amarelo">Capítulo</span></h1>
-            <p>Conheça a nova geração de talentos e as lendas consagradas que carregam o peso e o orgulho das cinco estrelas no peito.</p>
-            <a href="#elenco" class="btn-cta">Explorar Elenco</a>
+            <h1>A Maior de Todas <br>As <span>Copas do Mundo</span></h1>
+            <p>Acompanhe a evolução do futebol na América do Norte. Estrelas consolidadas e promessas meteóricas prontas para reescrever a história.</p>
+            <div class="cta-buttons">
+                <a href="#craques" class="btn btn-primary">Ver Jogadores</a>
+                <a href="#arena" class="btn btn-secondary">Jogar Agora</a>
+            </div>
         </div>
     </section>
 
-    <section id="elenco" class="section-container">
-        <h2 class="section-title">Os Protagonistas</h2>
-        
-        <div class="grid-jogadores">
+    <section id="craques" class="section-padding">
+        <div class="section-header">
+            <h2>Os Convocados do Destino</h2>
+            <p>Os principais protagonistas que disputam o trono mais cobiçado do esporte global.</p>
+        </div>
+
+        <div class="players-grid">
             
-            <div class="card-jogador">
-                <div class="img-container">
-                    <div class="numero-camisa">7</div>
-                    <div class="avatar-placeholder">⚡</div>
+            <div class="player-card">
+                <div class="player-visual">
+                    <div class="player-number">07</div>
+                    <div class="player-icon">⚡</div>
                 </div>
-                <div class="info-jogador">
-                    <span class="tag-posicao">Ponta Esquerda</span>
-                    <h3 class="nome-jogador">Vinícius Jr.</h3>
-                    <p class="detalhes-clube">Real Madrid / Espanha</p>
+                <div class="player-info">
+                    <span class="player-tag">Atacante</span>
+                    <h3 class="player-name">Vinícius Jr.</h3>
+                    <p class="player-country">Brasil</p>
                     
-                    <div class="status-bar-container">
-                        <div class="status-label"><span>Velocidade</span><span>97</span></div>
-                        <div class="bar-bg"><div class="bar-fill" style="width: 97%;"></div></div>
-                        
-                        <div class="status-label"><span>Drible</span><span>94</span></div>
-                        <div class="bar-bg"><div class="bar-fill" style="width: 94%;"></div></div>
+                    <div class="stat-row">
+                        <div class="stat-labels"><span>Velocidade</span><span>97</span></div>
+                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 97%;"></div></div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-labels"><span>Drible</span><span>95</span></div>
+                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 95%;"></div></div>
                     </div>
                 </div>
             </div>
 
-            <div class="card-jogador">
-                <div class="img-container">
-                    <div class="numero-camisa">10</div>
-                    <div class="avatar-placeholder">👑</div>
+            <div class="player-card">
+                <div class="player-visual">
+                    <div class="player-number">10</div>
+                    <div class="player-icon">👑</div>
                 </div>
-                <div class="info-jogador">
-                    <span class="tag-posicao">Meio-Campista / Atacante</span>
-                    <h3 class="nome-jogador">Neymar Jr.</h3>
-                    <p class="detalhes-clube">Al-Hilal / Arábia Saudita</p>
+                <div class="player-info">
+                    <span class="player-tag">Meio-Campo</span>
+                    <h3 class="player-name">Neymar Jr.</h3>
+                    <p class="player-country">Brasil</p>
                     
-                    <div class="status-bar-container">
-                        <div class="status-label"><span>Criatividade</span><span>95</span></div>
-                        <div class="bar-bg"><div class="bar-fill" style="width: 95%;"></div></div>
-                        
-                        <div class="status-label"><span>Técnica</span><span>96</span></div>
-                        <div class="bar-bg"><div class="bar-fill" style="width: 96%;"></div></div>
+                    <div class="stat-row">
+                        <div class="stat-labels"><span>Visão de Jogo</span><span>94</span></div>
+                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 94%;"></div></div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-labels"><span>Técnica</span><span>96</span></div>
+                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 96%;"></div></div>
                     </div>
                 </div>
             </div>
 
-            <div class="card-jogador">
-                <div class="img-container">
-                    <div class="numero-camisa">9</div>
-                    <div class="avatar-placeholder">💎</div>
+            <div class="player-card">
+                <div class="player-visual">
+                    <div class="player-number">09</div>
+                    <div class="player-icon">💎</div>
                 </div>
-                <div class="info-jogador">
-                    <span class="tag-posicao">Centroavante</span>
-                    <h3 class="nome-jogador">Endrick</h3>
-                    <p class="detalhes-clube">Real Madrid / Espanha</p>
+                <div class="player-info">
+                    <span class="player-tag">Centroavante</span>
+                    <h3 class="player-name">Endrick</h3>
+                    <p class="player-country">Brasil</p>
                     
-                    <div class="status-bar-container">
-                        <div class="status-label"><span>Força Explosiva</span><span>92</span></div>
-                        <div class="bar-bg"><div class="bar-fill" style="width: 92%;"></div></div>
-                        
-                        <div class="status-label"><span>Finalização</span><span>90</span></div>
-                        <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
+                    <div class="stat-row">
+                        <div class="stat-labels"><span>Força</span><span>91</span></div>
+                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 91%;"></div></div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-labels"><span>Finalização</span><span>93</span></div>
+                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 93%;"></div></div>
                     </div>
                 </div>
             </div>
 
-            <div class="card-jogador">
-                <div class="img-container">
-                    <div class="numero-camisa">11</div>
-                    <div class="avatar-placeholder">🎯</div>
+            <div class="player-card">
+                <div class="player-visual">
+                    <div class="player-number">10</div>
+                    <div class="player-icon">🥷</div>
                 </div>
-                <div class="info-jogador">
-                    <span class="tag-posicao">Atacante Versátil</span>
-                    <h3 class="nome-jogador">Rodrygo</h3>
-                    <p class="detalhes-clube">Real Madrid / Espanha</p>
+                <div class="player-info">
+                    <span class="player-tag">Atacante</span>
+                    <h3 class="player-name">Kylian Mbappé</h3>
+                    <p class="player-country">França</p>
                     
-                    <div class="status-bar-container">
-                        <div class="status-label"><span>Agilidade</span><span>93</span></div>
-                        <div class="bar-bg"><div class="bar-fill" style="width: 93%;"></div></div>
-                        
-                        <div class="status-label"><span>Passe</span><span>88</span></div>
-                        <div class="bar-bg"><div class="bar-fill" style="width: 88%;"></div></div>
+                    <div class="stat-row">
+                        <div class="stat-labels"><span>Explosão</span><span>98</span></div>
+                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 98%;"></div></div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-labels"><span>Chute</span><span>92</span></div>
+                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 92%;"></div></div>
                     </div>
                 </div>
             </div>
@@ -450,61 +526,108 @@
         </div>
     </section>
 
-    <section id="historia" class="historico">
-        <div class="section-container">
-            <h2 class="section-title">A Dinastia das Cinco Estrelas</h2>
-            <p style="text-align: center; color: var(--texto-cinza); max-width: 700px; margin: -30px auto 40px auto;">
-                Nenhum outro país no planeta evoca tanto respeito internacional dentro das quatro linhas quanto o Brasil. Abaixo, nossa linha do tempo gloriosa na maior competição da Terra.
-            </p>
-            
-            <table class="tabela-titulos">
-                <thead>
-                    <tr>
-                        <th>Ano</th>
-                        <th>Sede</th>
-                        <th>Adversário da Final</th>
-                        <th>Placar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>1958</strong></td>
-                        <td>Suécia</td>
-                        <td>Suécia</td>
-                        <td>5 x 2</td>
-                    </tr>
-                    <tr>
-                        <td><strong>1962</strong></td>
-                        <td>Chile</td>
-                        <td>Tchecoslováquia</td>
-                        <td>3 x 1</td>
-                    </tr>
-                    <tr>
-                        <td><strong>1970</strong></td>
-                        <td>México</td>
-                        <td>Itália</td>
-                        <td>4 x 1</td>
-                    </tr>
-                    <tr>
-                        <td><strong>1994</strong></td>
-                        <td>Estados Unidos</td>
-                        <td>Itália</td>
-                        <td>0 x 0 (3x2 Pênaltis)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>2002</strong></td>
-                        <td>Coreia do Sul / Japão</td>
-                        <td>Alemanha</td>
-                        <td>2 x 0</td>
-                    </tr>
-                </tbody>
-            </table>
+    <section id="arena" class="section-padding game-section">
+        <div class="section-header">
+            <h2>Arena Penalty Shootout</h2>
+            <p>Mostre suas habilidades de craque. Escolha o canto e vença o goleiro eletrônico!</p>
+        </div>
+
+        <div class="game-container">
+            <div class="scoreboard">
+                <div>GOLS: <span id="score-gols">0</span></div>
+                <div>DEFESAS: <span id="score-defesas">0</span></div>
+            </div>
+
+            <div class="stadium-wrapper">
+                <div class="goalpost"></div>
+                <div id="goalkeeper" class="goalkeeper">🧤</div>
+                <div id="ball" class="ball">⚽</div>
+            </div>
+
+            <div class="target-controls">
+                <button class="btn-shoot" onclick="chutar('esquerda')">Canto Esquerdo</button>
+                <button class="btn-shoot" onclick="chutar('centro')">Centro do Gol</button>
+                <button class="btn-shoot" onclick="chutar('direita')">Canto Direito</button>
+            </div>
+
+            <div id="feedback" class="game-feedback"></div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Brasil.FC - Desenvolvido para os apaixonados pelo Futebol Arte <span>&#x26BD;</span></p>
+        <p>&copy; 2026 Ultimate Copa Site. Desenvolvido no ritmo da maior competição da história.</p>
     </footer>
 
+    <script>
+        let gols = 0;
+        let defesas = 0;
+
+        const goleiro = document.getElementById('goalkeeper');
+        const bola = document.getElementById('ball');
+        const feedback = document.getElementById('feedback');
+        const txtGols = document.getElementById('score-gols');
+        const txtDefesas = document.getElementById('score-defesas');
+
+        // Mapeia posições visuais do CSS dentro da trave
+        const posicoesGoleiro = {
+            'esquerda': 'calc(50% - 100px)',
+            'centro': 'calc(50% - 25px)',
+            'direita': 'calc(50% + 50px)'
+        };
+
+        const posicoesBola = {
+            'esquerda': { left: 'calc(50% - 90px)', top: '60px' },
+            'centro': { left: 'calc(50% - 18px)', top: '75px' },
+            'direita': { left: 'calc(50% + 60px)', top: '60px' }
+        };
+
+        function chutar(cantoEscolhido) {
+            // Desabilita botões temporariamente durante a animação
+            document.querySelectorAll('.btn-shoot').forEach(b => b.disabled = true);
+            feedback.innerText = "Chutou...";
+
+            // Goleiro escolhe um canto aleatório para pular
+            const opcoes = ['esquerda', 'centro', 'direita'];
+            const cantoGoleiro = opcoes[Math.floor(Math.random() * opcoes.length)];
+
+            // Move o goleiro e a bola nas coordenadas corretas
+            goleiro.style.left = posicoesGoleiro[cantoGoleiro];
+            if(cantoGoleiro !== 'centro') goleiro.style.bottom = '20px'; // Efeito pulo
+
+            bola.style.left = posicoesBola[cantoEscolhido].left;
+            bola.style.top = posicoesBola[cantoEscolhido].top;
+
+            setTimeout(() => {
+                // Checa resultado após a animação terminar
+                if (cantoEscolhido === cantoGoleiro) {
+                    feedback.style.color = '#ff4b4b';
+                    feedback.innerText = "DEFENDEU! 🧤❌";
+                    defesas++;
+                    txtDefesas.innerText = defesas;
+                } else {
+                    feedback.style.color = 'var(--neon-green)';
+                    feedback.innerText = "GOOOOOL! ⚽🔥";
+                    gols++;
+                    txtGols.innerText = gols;
+                }
+
+                // Reseta a jogada após 2 segundos
+                setTimeout(resetarCampo, 1800);
+            }, 500);
+        }
+
+        function resetarCampo() {
+            // Reseta posições visuais dos elementos
+            bola.style.left = 'calc(50% - 18px)';
+            bola.style.top = 'auto';
+            bola.style.bottom = '20px';
+
+            goleiro.style.left = 'calc(50% - 25px)';
+            goleiro.style.bottom = '0';
+
+            feedback.innerText = "";
+            document.querySelectorAll('.btn-shoot').forEach(b => b.disabled = false);
+        }
+    </script>
 </body>
 </html>
